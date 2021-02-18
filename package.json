@@ -1,0 +1,150 @@
+{
+    "name": "string-highlight",
+    "icon": "src/static/icon.png",
+    "galleryBanner": {
+        "color": "#1e1e1e",
+        "theme": "dark"
+    },
+    "displayName": "string-highlight",
+    "description": " Syntax highlight for code in string. Such as html tags in template literals.",
+    "version": "0.0.1",
+    "publisher": "jenkey2011",
+    "repository": "https://github.com/jenkey2011/string-highlight",
+    "engines": {
+        "vscode": "^1.53.0"
+    },
+    "activationEvents": [
+        "onLanguage:javascript",
+        "onLanguage:javascriptreact",
+        "onLanguage:typescript",
+        "onLanguage:typescriptreact"
+    ],
+    "main": "./dist/index.js",
+    "categories": [
+        "Talos",
+        "lit",
+        "es6 template literals",
+        "template literals highlight",
+        "highlight",
+        "es6"
+    ],
+    "contributes": {
+        "configuration": [
+            {
+                "id": "lit-html",
+                "title": "Lit HTML",
+                "properties": {
+                    "lit-html.tags": {
+                        "type": "array",
+                        "description": "List of template tags to enable html intellisense in.",
+                        "items": {
+                            "type": "string",
+                            "description": "Tag name."
+                        },
+                        "default": [
+                            "html",
+                            "raw"
+                        ]
+                    },
+                    "lit-html.format.enabled": {
+                        "type": "boolean",
+                        "description": "Enable/disable formatting of html template strings.",
+                        "default": true
+                    }
+                }
+            }
+        ],
+        "grammars": [
+            {
+                "injectTo": [
+                    "source.js",
+                    "source.js.jsx",
+                    "source.jsx",
+                    "source.ts",
+                    "source.tsx",
+                    "text.html.basic"
+                ],
+                "scopeName": "inline.lit-html",
+                "path": "./syntaxes/lit-html.json",
+                "embeddedLanguages": {
+                    "meta.embedded.block.html": "html",
+                    "meta.embedded.block.css": "css",
+                    "source.css": "css"
+                }
+            },
+            {
+                "injectTo": [
+                    "source.js",
+                    "source.js.jsx",
+                    "source.jsx",
+                    "source.ts",
+                    "source.tsx",
+                    "text.html.basic"
+                ],
+                "scopeName": "inline.lit-html.string.injection",
+                "path": "./syntaxes/lit-html-string-injection.json",
+                "embeddedLanguages": {
+                    "meta.template.expression.ts": "typescript"
+                }
+            },
+            {
+                "injectTo": [
+                    "source.js",
+                    "source.js.jsx",
+                    "source.jsx",
+                    "source.ts",
+                    "source.tsx",
+                    "text.html.basic"
+                ],
+                "scopeName": "inline.lit-html.style.injection",
+                "path": "./syntaxes/lit-html-style-injection.json",
+                "embeddedLanguages": {
+                    "meta.template.expression.ts": "typescript"
+                }
+            },
+            {
+                "injectTo": [
+                    "source.js",
+                    "source.js.jsx",
+                    "source.jsx",
+                    "source.ts",
+                    "source.tsx",
+                    "text.html.basic"
+                ],
+                "scopeName": "inline.lit-html-svg",
+                "path": "./syntaxes/lit-html-svg.json",
+                "embeddedLanguages": {
+                    "meta.embedded.block.svg": "xml"
+                }
+            }
+        ],
+        "typescriptServerPlugins": [
+            {
+                "name": "typescript-lit-html-plugin",
+                "enableForWorkspaceTypeScriptVersions": true
+            }
+        ],
+        "jsonValidation": [
+            {
+                "fileMatch": "jsconfig*.json",
+                "url": "./schemas/tsconfig.schema.json"
+            },
+            {
+                "fileMatch": "tsconfig*.json",
+                "url": "./schemas/tsconfig.schema.json"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -p ./",
+        "watch": "tsc -w -p ./"
+    },
+    "dependencies": {
+        "typescript-lit-html-plugin": "^0.9.0"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.53.0",
+        "typescript": "^4.1.5"
+    }
+}
