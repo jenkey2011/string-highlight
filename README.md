@@ -2,7 +2,9 @@
 
 Syntax highlight for code in string. Such as html tags in template literals.
 
-![](src/static/show.png)
+![](src/static/diff.png)
+
+![](src/static/show.gif)
 
 ## Features
 
