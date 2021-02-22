@@ -7,7 +7,7 @@
     },
     "displayName": "string-highlight",
     "description": " Syntax highlight for code in string. Such as html tags in template literals.",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "jenkey2011",
     "repository": "https://github.com/jenkey2011/string-highlight",
     "engines": {
@@ -44,7 +44,7 @@
         "es6"
 	],
     "contributes": {
-        "configuration": [
+        "configuration_bak": [
             {
                 "id": "lit-html",
                 "title": "Lit HTML",
