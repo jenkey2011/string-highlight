@@ -16,7 +16,7 @@
 			"name": "string.js.taggedTemplate",
 			"contentName": "meta.embedded.block.html",
             "begin_a": "(\\s?\\/?\\*?\\s?(html|sql|SQL|inline-sql|inline-SQL)\\s?\\*?\\/?\\s?)(`)",
-            "begin": "(\\w+)\\s*?(=\\s*?)(\\s?\\/\\*\\s?(html|template|inline-html|inline-template)\\s?\\*\\/\\s?)?(`)",
+            "begin": "(\\w+)\\s*?(\\+?=\\>?\\s*?)(\\s?\\/\\*\\s?(html|template|inline-html|inline-template)\\s?\\*\\/\\s?)?(`)",
 			"beginCaptures": {
 				"1": {
 					"name": "entity.name.function.tagged-template.js"
